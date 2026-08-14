@@ -1,0 +1,537 @@
+/* Africroots homepage redesign — scoped entirely under .ar-home-redesign */
+
+.ar-home-redesign {
+	--ar-dark: #241a12;
+	--ar-brown: #4a3323;
+	--ar-tan: #c9a877;
+	--ar-gold: #b8905a;
+	--ar-cream: #faf5ec;
+	--ar-cream-2: #f0e6d6;
+	--ar-text: #241a12;
+
+	font-family: 'Jost', -apple-system, 'Segoe UI', Roboto, sans-serif;
+	color: var(--ar-text);
+	background: var(--ar-cream);
+	overflow-x: hidden;
+}
+
+.ar-home-redesign * {
+	box-sizing: border-box;
+}
+
+.ar-home-redesign h1,
+.ar-home-redesign h2,
+.ar-home-redesign h3 {
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	margin: 0;
+}
+
+.ar-home-redesign .ar-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+.ar-home-redesign .ar-eyebrow::before,
+.ar-home-redesign .ar-eyebrow::after {
+	content: '';
+	display: inline-block;
+	width: 26px;
+	height: 1px;
+	background: currentColor;
+	opacity: 0.6;
+}
+
+/* ---------- Hero ---------- */
+
+.ar-hero {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 2752 / 1536;
+	background: #1c130c url('../images/hero-roots.png') center / cover no-repeat;
+}
+
+.ar-hero-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.6rem clamp(1.25rem, 4vw, 3rem) 0;
+	color: #f4ead9;
+}
+
+.ar-hero-nav .ar-logo {
+	display: flex;
+	align-items: center;
+}
+
+.ar-hero-nav .ar-logo img {
+	height: clamp(22px, 3vw, 32px);
+	width: auto;
+	display: block;
+}
+
+.ar-hero-nav .ar-nav-links {
+	display: flex;
+	gap: clamp(1rem, 2vw, 2rem);
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.ar-hero-nav .ar-nav-links a {
+	color: #f4ead9;
+	text-decoration: none;
+	opacity: 0.75;
+	padding-bottom: 4px;
+}
+
+.ar-hero-nav .ar-nav-links a.is-active,
+.ar-hero-nav .ar-nav-links a:hover {
+	opacity: 1;
+	border-bottom: 1px solid var(--ar-tan);
+}
+
+.ar-hero-nav .ar-nav-icons {
+	display: flex;
+	gap: 1.1rem;
+	font-size: 1rem;
+}
+
+.ar-hero-nav .ar-nav-icons a {
+	color: #f4ead9;
+	text-decoration: none;
+}
+
+/* frosted-glass feature strip, overlapping the bottom of the hero photo */
+.ar-feature-strip {
+	position: relative;
+	z-index: 2;
+	max-width: 1080px;
+	margin: -6.5rem auto 0;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(18px) saturate(160%);
+	-webkit-backdrop-filter: blur(18px) saturate(160%);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.ar-feature-item {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	padding: 1.6rem 1.5rem;
+}
+
+.ar-feature-item svg {
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	color: #f4ead9;
+	opacity: 0.9;
+}
+
+.ar-feature-item span {
+	font-size: 0.78rem;
+	line-height: 1.35;
+	color: rgba(244, 234, 217, 0.8);
+}
+
+.ar-feature-item span b {
+	display: block;
+	color: #f4ead9;
+	font-weight: 600;
+	font-size: 0.85rem;
+}
+
+/* ---------- Shop by category ---------- */
+
+.ar-categories {
+	text-align: center;
+	padding: 7rem 2rem 6rem;
+	background: var(--ar-cream);
+}
+
+.ar-categories .ar-eyebrow {
+	color: var(--ar-gold);
+}
+
+.ar-categories h2 {
+	font-size: clamp(2.1rem, 4vw, 2.9rem);
+	margin: 0.6rem 0 0.75rem;
+}
+
+.ar-categories p {
+	color: #6b5a45;
+	max-width: 480px;
+	margin: 0 auto;
+}
+
+.ar-cat-grid {
+	max-width: 1180px;
+	margin: 3rem auto 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+}
+
+.ar-cat-card {
+	display: block;
+	text-decoration: none;
+	color: var(--ar-text);
+	border-radius: 16px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 12px 30px rgba(44, 32, 21, 0.1);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ar-cat-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 18px 40px rgba(44, 32, 21, 0.16);
+}
+
+.ar-cat-card .ar-cat-img {
+	position: relative;
+	aspect-ratio: 3 / 3.6;
+	background: #e7dcc8;
+}
+
+.ar-cat-card .ar-cat-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+	transition: transform 0.5s ease;
+	display: block;
+}
+
+.ar-cat-card:hover .ar-cat-img img {
+	transform: scale(1.06);
+}
+
+.ar-cat-label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 0.9rem 1.1rem;
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	font-size: 1.05rem;
+}
+
+.ar-cat-label svg {
+	width: 15px;
+	height: 15px;
+	transition: transform 0.2s ease;
+	color: var(--ar-gold);
+}
+
+.ar-cat-card:hover .ar-cat-label svg {
+	transform: translateX(4px);
+}
+
+/* ---------- About us ---------- */
+
+.ar-about {
+	padding: 1rem 2rem 6.5rem;
+	background: var(--ar-cream);
+}
+
+.ar-about-inner {
+	max-width: 780px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.ar-about .ar-eyebrow {
+	color: var(--ar-gold);
+}
+
+.ar-about h2 {
+	font-size: clamp(2rem, 3.6vw, 2.6rem);
+	margin: 0.6rem 0 1.25rem;
+}
+
+.ar-about p {
+	color: #5a4a38;
+	line-height: 1.75;
+	font-size: 1.05rem;
+	max-width: 620px;
+	margin: 0 auto;
+}
+
+.ar-about-cities {
+	max-width: 980px;
+	margin: 3.5rem auto 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ar-about-city {
+	padding: 0 2rem;
+	border-right: 1px solid rgba(44, 32, 21, 0.12);
+}
+
+.ar-about-city:last-child {
+	border-right: none;
+}
+
+.ar-about-city h3 {
+	font-size: 1.5rem;
+	letter-spacing: 0.04em;
+}
+
+.ar-about-city .ar-city-rule {
+	width: 32px;
+	height: 2px;
+	background: var(--ar-gold);
+	margin: 0.85rem auto;
+}
+
+.ar-about-city p {
+	font-size: 0.88rem;
+	color: #6b5a45;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* ---------- Brand story ---------- */
+
+.ar-brand-wrap {
+	padding: 0 2rem 7rem;
+	background: var(--ar-cream);
+}
+
+.ar-brand {
+	max-width: 1180px;
+	margin: 0 auto;
+	background: var(--ar-dark);
+	color: #f3ead9;
+	border-radius: 26px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 1.1fr;
+}
+
+.ar-brand-img {
+	min-height: 480px;
+	background: url('../images/brand-lifestyle.jpg') center / cover no-repeat;
+}
+
+.ar-brand-content {
+	padding: 3.5rem 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ar-brand-content .ar-eyebrow {
+	color: var(--ar-tan);
+}
+
+.ar-brand-content h2 {
+	font-size: clamp(2rem, 3.4vw, 2.7rem);
+	margin: 0.5rem 0 0.75rem;
+}
+
+.ar-brand-content > p {
+	color: #dccdb2;
+	line-height: 1.6;
+	max-width: 420px;
+	margin-bottom: 1.25rem;
+}
+
+.ar-brand-divider {
+	width: 46px;
+	height: 2px;
+	background: var(--ar-tan);
+	margin-bottom: 2rem;
+}
+
+.ar-brand-features {
+	display: flex;
+	gap: 0;
+}
+
+.ar-brand-feature {
+	flex: 1;
+	text-align: center;
+	padding: 0 1rem;
+	border-right: 1px solid rgba(243, 234, 217, 0.15);
+}
+
+.ar-brand-feature:last-child {
+	border-right: none;
+}
+
+.ar-brand-feature .ar-icon-circle {
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgba(201, 168, 119, 0.5);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 0.75rem;
+}
+
+.ar-brand-feature svg {
+	width: 20px;
+	height: 20px;
+	color: var(--ar-tan);
+}
+
+.ar-brand-feature strong {
+	display: block;
+	font-size: 0.85rem;
+	margin-bottom: 0.2rem;
+	font-weight: 600;
+}
+
+.ar-brand-feature span {
+	font-size: 0.74rem;
+	color: #c8b89a;
+	line-height: 1.4;
+}
+
+/* ---------- Footer ---------- */
+
+.ar-footer {
+	background: var(--ar-dark);
+	color: #d9c9ad;
+}
+
+.ar-footer-inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 4rem 2rem 1.75rem;
+	display: grid;
+	grid-template-columns: 1.4fr 1fr 1fr 1fr;
+	gap: 2.5rem;
+}
+
+.ar-footer-brand img {
+	height: 34px;
+	width: auto;
+	margin-bottom: 1rem;
+}
+
+.ar-footer-brand p {
+	font-size: 0.85rem;
+	line-height: 1.7;
+	color: #b8a888;
+	max-width: 280px;
+	margin: 0;
+}
+
+.ar-footer h4 {
+	color: var(--ar-tan);
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.72rem;
+	margin: 0 0 1rem;
+	font-weight: 600;
+}
+
+.ar-footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	font-size: 0.85rem;
+}
+
+.ar-footer ul a {
+	color: #d9c9ad;
+	text-decoration: none;
+}
+
+.ar-footer ul a:hover {
+	color: #f4ead9;
+}
+
+.ar-footer-bottom {
+	max-width: 1180px;
+	margin: 0 auto;
+	border-top: 1px solid rgba(217, 201, 173, 0.15);
+	padding: 1.25rem 2rem 2rem;
+	font-size: 0.75rem;
+	color: #a89877;
+	text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+	.ar-hero-nav .ar-nav-links {
+		display: none;
+	}
+
+	.ar-feature-strip {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.ar-cat-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.ar-about-cities {
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+	}
+
+	.ar-about-city {
+		border-right: none;
+	}
+
+	.ar-brand {
+		grid-template-columns: 1fr;
+	}
+
+	.ar-brand-img {
+		min-height: 260px;
+	}
+
+	.ar-brand-features {
+		flex-wrap: wrap;
+	}
+
+	.ar-brand-feature {
+		flex: 1 1 33%;
+		border-right: none;
+		margin-bottom: 1rem;
+	}
+
+	.ar-footer-inner {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 520px) {
+	.ar-feature-strip {
+		grid-template-columns: 1fr;
+	}
+
+	.ar-cat-grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.ar-footer-inner {
+		grid-template-columns: 1fr;
+	}
+}
