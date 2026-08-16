@@ -1,0 +1,355 @@
+/* Restyles WooCommerce's real markup to match the Africroots redesign.
+   Structure/functionality (loops, forms, AJAX add-to-cart, variations,
+   gallery) is untouched — this only changes appearance. */
+
+.ar-home-redesign.woocommerce,
+.ar-home-redesign .woocommerce {
+	color: var(--ar-text);
+}
+
+/* The archive already shows our own custom hero heading (.ar-inner-hero) —
+   the theme's own default archive title ("The Shop" etc.) rendered right
+   underneath it as a duplicate heading with its own vertical spacing.
+   Hiding it removes both the duplication and most of that gap. */
+.ar-home-redesign .entry-header.shop,
+.ar-home-redesign .entry-header.tax-product_cat,
+.ar-home-redesign .entry-header.tax-product_tag,
+.ar-home-redesign .woocommerce-products-header {
+	display: none;
+}
+
+.ar-home-redesign .x-container.offset-top {
+	padding-top: 1.5rem !important;
+}
+
+.ar-home-redesign .x-container.offset-bottom {
+	padding-bottom: 1rem !important;
+}
+
+/* ---- shop / category archive grid ---- */
+
+.ar-home-redesign ul.products {
+	max-width: 1180px;
+	margin: 0 auto !important;
+	padding: 0 2rem 6rem;
+	display: grid !important;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.75rem;
+	list-style: none;
+}
+
+.ar-home-redesign ul.products li.product {
+	width: 100% !important;
+	margin: 0 !important;
+	float: none !important;
+	position: relative;
+	font-family: 'Jost', -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ar-home-redesign ul.products li.product a {
+	text-decoration: none;
+	color: var(--ar-text);
+}
+
+.ar-home-redesign ul.products li.product img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+	background: #efe6d6;
+	border-radius: 14px;
+	display: block;
+}
+
+.ar-home-redesign ul.products li.product h3,
+.ar-home-redesign ul.products li.product h3 a,
+.ar-home-redesign .woocommerce-loop-product__title {
+	font-family: 'Jost', -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+	font-size: 1rem;
+	font-weight: 500;
+	margin: 0.9rem 0 0.4rem;
+	color: var(--ar-text);
+}
+
+.ar-home-redesign ul.products li.product .price {
+	font-size: 0.95rem;
+	color: var(--ar-text);
+}
+
+.ar-home-redesign ul.products li.product .price del {
+	color: #a99878;
+	margin-right: 0.5rem;
+	text-decoration: line-through;
+}
+
+.ar-home-redesign ul.products li.product .price ins {
+	color: var(--ar-gold);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.ar-home-redesign span.onsale {
+	position: absolute;
+	top: 0.75rem;
+	left: 0.75rem;
+	background: var(--ar-gold);
+	color: #241a12;
+	font-size: 0.68rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.3rem 0.6rem;
+	border-radius: 999px;
+	min-height: 0;
+	min-width: 0;
+	line-height: 1;
+	right: auto;
+}
+
+.ar-home-redesign ul.products li.product a.button,
+.ar-home-redesign ul.products li.product a.add_to_cart_button {
+	display: inline-block;
+	margin-top: 0.8rem;
+	background: var(--ar-dark);
+	color: #f4ead9 !important;
+	border-radius: 999px;
+	padding: 0.6rem 1.4rem;
+	font-size: 0.78rem;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	border: none;
+}
+
+/* toolbar (result count / ordering) */
+.ar-home-redesign .woocommerce-notices-wrapper,
+.ar-home-redesign .woocommerce-result-count,
+.ar-home-redesign .woocommerce-ordering {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.ar-home-redesign .woocommerce-ordering select {
+	border: 1px solid rgba(44, 32, 21, 0.18);
+	border-radius: 999px;
+	padding: 0.5rem 1.1rem;
+	font-size: 0.8rem;
+	background: #fff;
+	color: var(--ar-text);
+}
+
+.ar-home-redesign nav.woocommerce-pagination {
+	max-width: 1180px;
+	margin: 0 auto 4rem;
+	padding: 0 2rem;
+	text-align: center;
+}
+
+.ar-home-redesign nav.woocommerce-pagination ul {
+	border: none !important;
+}
+
+.ar-home-redesign nav.woocommerce-pagination ul li {
+	border: none !important;
+}
+
+.ar-home-redesign nav.woocommerce-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 999px;
+	color: var(--ar-text);
+	margin: 0 0.2rem;
+}
+
+.ar-home-redesign nav.woocommerce-pagination .page-numbers.current {
+	background: var(--ar-dark);
+	color: #f4ead9;
+}
+
+/* ---- single product page ---- */
+
+.ar-home-redesign div.product {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 3.5rem 2rem 1rem;
+}
+
+.ar-home-redesign div.product .woocommerce-product-gallery {
+	border-radius: 16px;
+	overflow: hidden;
+	background: #f2ece0;
+}
+
+.ar-home-redesign div.product .woocommerce-product-gallery img {
+	object-fit: contain;
+}
+
+.ar-home-redesign div.product .summary.entry-summary {
+	padding-left: 1rem;
+}
+
+.ar-home-redesign div.product h1.product_title {
+	font-family: 'Jost', -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+	font-weight: 600;
+	font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+	margin: 0 0 0.7rem;
+	color: var(--ar-text);
+}
+
+.ar-home-redesign div.product p.price,
+.ar-home-redesign div.product span.price {
+	font-size: 1.2rem;
+	color: var(--ar-text);
+	margin-bottom: 1.1rem;
+	display: block;
+}
+
+.ar-home-redesign div.product p.price del,
+.ar-home-redesign div.product span.price del {
+	color: #a99878;
+	margin-right: 0.6rem;
+}
+
+.ar-home-redesign div.product p.price ins,
+.ar-home-redesign div.product span.price ins {
+	color: var(--ar-gold);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.ar-home-redesign div.product .woocommerce-product-details__short-description {
+	color: #5a4a38;
+	font-size: 0.92rem;
+	line-height: 1.7;
+	margin-bottom: 1.6rem;
+}
+
+.ar-home-redesign table.variations {
+	margin-bottom: 1.1rem;
+}
+
+.ar-home-redesign table.variations label {
+	font-size: 0.8rem;
+	color: #5a4a38;
+	font-weight: 500;
+}
+
+.ar-home-redesign table.variations select {
+	width: 100%;
+	padding: 0.7rem 1rem;
+	border: 1px solid rgba(44, 32, 21, 0.2);
+	border-radius: 10px;
+	background: #fff;
+	color: var(--ar-text);
+	font-family: inherit;
+}
+
+.ar-home-redesign div.product form.cart {
+	margin: 1.5rem 0;
+}
+
+.ar-home-redesign div.product .quantity input.qty {
+	border: 1px solid rgba(44, 32, 21, 0.2);
+	border-radius: 999px;
+	text-align: center;
+	height: 40px;
+	font-family: inherit;
+}
+
+.ar-home-redesign div.product button.single_add_to_cart_button {
+	background: var(--ar-dark) !important;
+	color: #f4ead9 !important;
+	border: none !important;
+	border-radius: 999px !important;
+	padding: 0.9rem 2.2rem !important;
+	font-size: 0.85rem !important;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.ar-home-redesign div.product .product_meta {
+	font-size: 0.78rem;
+	color: #9a8a76;
+	margin-top: 1.2rem;
+}
+
+.ar-home-redesign div.product .product_meta a {
+	color: var(--ar-gold);
+}
+
+/* tabs */
+.ar-home-redesign .woocommerce-tabs ul.tabs {
+	border-bottom: 1px solid rgba(44, 32, 21, 0.12);
+	padding: 0;
+	margin: 1.5rem 0 0;
+}
+
+.ar-home-redesign .woocommerce-tabs ul.tabs::before {
+	display: none;
+}
+
+.ar-home-redesign .woocommerce-tabs ul.tabs li {
+	border: none !important;
+	background: none !important;
+	margin: 0 1.5rem 0 0 !important;
+	padding: 0 !important;
+}
+
+.ar-home-redesign .woocommerce-tabs ul.tabs li a {
+	color: #9a8a76;
+	font-size: 0.85rem;
+	padding: 0.9rem 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+}
+
+.ar-home-redesign .woocommerce-tabs ul.tabs li.active a {
+	color: var(--ar-text);
+	border-color: var(--ar-gold);
+}
+
+.ar-home-redesign .woocommerce-tabs .panel {
+	padding: 1.75rem 0;
+	color: #5a4a38;
+	line-height: 1.75;
+	max-width: 720px;
+}
+
+/* related products */
+.ar-home-redesign .related.products {
+	max-width: 1180px;
+	margin: 2rem auto 6rem;
+	padding: 0 2rem;
+}
+
+.ar-home-redesign .related.products > h2 {
+	font-size: 1.3rem;
+	margin-bottom: 1.5rem;
+	font-family: 'Playfair Display', Georgia, serif;
+}
+
+@media (max-width: 900px) {
+	.ar-home-redesign ul.products {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.ar-home-redesign div.product .images,
+	.ar-home-redesign div.product .summary {
+		width: 100% !important;
+		float: none !important;
+	}
+
+	.ar-home-redesign div.product .summary.entry-summary {
+		padding-left: 0;
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 520px) {
+	.ar-home-redesign ul.products {
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+}

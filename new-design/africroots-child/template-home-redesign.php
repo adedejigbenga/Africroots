@@ -20,17 +20,29 @@
 <main class="ar-home-redesign">
 
 	<section class="ar-hero">
+		<h1 class="ar-visually-hidden">Africroots &mdash; African Heritage Activewear | Rooted in Heritage, Worn with Pride</h1>
 		<div class="ar-hero-nav">
 			<a class="ar-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/logo-africroots.png' ); ?>" alt="Africroots">
 			</a>
 			<nav class="ar-nav-links">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="is-active">Home</a>
-				<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">Shop</a>
-				<a href="<?php echo esc_url( home_url( '/product-category/new-arrivals/' ) ); ?>">New Arrivals</a>
-				<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">Collections</a>
+				<div class="ar-nav-dropdown">
+					<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">Shop</a>
+					<div class="ar-nav-dropdown-menu">
+						<a href="<?php echo esc_url( home_url( '/product-category/new-arrivals/' ) ); ?>">New Arrivals</a>
+						<a href="<?php echo esc_url( home_url( '/product-category/best-sellers/' ) ); ?>">Best Sellers</a>
+						<a href="<?php echo esc_url( home_url( '/product-category/mens/' ) ); ?>">Mens</a>
+						<a href="<?php echo esc_url( home_url( '/product-category/womens/' ) ); ?>">Womens</a>
+					</div>
+				</div>
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a>
+				<a href="<?php echo esc_url( home_url( '/size-guide/' ) ); ?>">Size Guide</a>
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>
 			</nav>
+			<button type="button" class="ar-nav-toggle" aria-label="Menu" aria-expanded="false">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+			</button>
 			<div class="ar-nav-icons">
 				<a href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" aria-label="Search">
 					<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -88,7 +100,7 @@
 			</a>
 			<a class="ar-cat-card" href="<?php echo esc_url( home_url( '/product-category/new-arrivals/' ) ); ?>">
 				<div class="ar-cat-img">
-					<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/cat-new-arrivals.jpg' ); ?>" alt="New Arrivals" loading="lazy">
+					<img src="<?php echo esc_url( 'https://www.africroots.com/wp-content/uploads/2026/08/africroots-new-arrivals-tee.jpg' ); ?>" alt="New Arrivals" loading="lazy">
 				</div>
 				<div class="ar-cat-label">New Arrivals
 					<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
